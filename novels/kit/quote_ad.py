@@ -43,11 +43,12 @@ def _gaps(sp):
             i = j
         else: i += 1
     return g
-QUOTE_ONLY = os.environ.get("QUOTE_ONLY") == "1"
+QUOTE_ONLY = os.environ.get("QUOTE_ONLY") == "1"   # no spoken end line: card appears after the last word
+CUT_TAIL = os.environ.get("CUT_TAIL") == "1"       # voice has a spoken end line after a long pause: cut it off
 _sp = _speech(vo); _g = _gaps(_sp)
 if _g:
     a_, b_ = max(_g, key=lambda g: g[1] - g[0])
-    if QUOTE_ONLY:      # drop the spoken "Title. Now on Amazon." entirely
+    if CUT_TAIL:        # drop the spoken "Title. Now on Amazon." entirely
         vo = vo[:int((a_ + 0.3) * SR)]
     elif b_ - a_ > 1.0:   # shorten the long pause before the title line to 1.0s
         cut0 = int((a_ + 0.5) * SR); cut1 = int((b_ - 0.5) * SR)
@@ -73,7 +74,7 @@ while i < n:
 first = np.argmax(speech) * 0.02
 last = (n - np.argmax(speech[::-1])) * 0.02
 LEAD = 0.7
-if QUOTE_ONLY:
+if QUOTE_ONLY or CUT_TAIL:
     quote_end = LEAD + last
     card_t = quote_end + 0.5
     TOTAL = min(14.8, card_t + 3.2)
