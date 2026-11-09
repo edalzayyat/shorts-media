@@ -29,3 +29,6 @@
 2026-11-07 | Solve for Unknown | There were nine Brennans and six chairs.
 2026-11-07 | The Aide | She started saying it back. Orange. Like a password.
 2026-11-07 | Lab 111C | Light’s bad in here. You’ll ruin your eyes.
+2026-11-09 | Room 117 | He was the best teacher at Carver High. Everyone said so.
+2026-11-09 | The Aide | That was the kind of math she was good at. Not the kind that made things add up.
+2026-11-09 | Lab 111C | He looks like someone took him out of a dryer too soon.
