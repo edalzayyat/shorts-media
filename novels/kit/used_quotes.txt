@@ -47,3 +47,4 @@
 2026-11-16 | The Aide | The radio said nothing. Which meant it would say something later.
 2026-11-18 | Lab 111C | Not because it’s nothing. Because it might be something.
 2026-11-19 | Solve for Unknown | All that math. What did it actually do for you?
+2026-11-20 | Lab 111C | Slow down. Write down what you know. Separate observation from inference.
